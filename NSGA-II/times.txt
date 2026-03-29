@@ -1,0 +1,119 @@
+Solving Instances/c101.dat with seed 0.123
+->Tcpu 130.68
+
+Solving Instances/c101.dat with seed 0.237
+->Tcpu 131.36
+
+Solving Instances/c101.dat with seed 0.351
+->Tcpu 121.33
+
+Solving Instances/c101.dat with seed 0.468
+->Tcpu 127.99
+
+Solving Instances/c101.dat with seed 0.582
+->Tcpu 124.50
+
+Solving Instances/c101.dat with seed 0.619
+->Tcpu 108.64
+
+Solving Instances/c101.dat with seed 0.703
+->Tcpu 83.73
+
+Solving Instances/c101.dat with seed 0.745
+->Tcpu 83.78
+
+Solving Instances/c101.dat with seed 0.862
+->Tcpu 108.85
+
+Solving Instances/c101.dat with seed 0.974
+->Tcpu 217.33
+
+Solving Instances/c102.dat with seed 0.123
+->Tcpu 121.13
+
+Solving Instances/c102.dat with seed 0.237
+->Tcpu 69.09
+
+Solving Instances/c102.dat with seed 0.351
+->Tcpu 97.35
+
+Solving Instances/c102.dat with seed 0.468
+->Tcpu 99.47
+
+Solving Instances/c102.dat with seed 0.582
+->Tcpu 94.06
+
+Solving Instances/c102.dat with seed 0.619
+->Tcpu 93.07
+
+Solving Instances/c102.dat with seed 0.703
+->Tcpu 110.82
+
+Solving Instances/c102.dat with seed 0.745
+->Tcpu 112.21
+
+Solving Instances/c102.dat with seed 0.862
+->Tcpu 97.19
+
+Solving Instances/c102.dat with seed 0.974
+->Tcpu 88.34
+
+Solving Instances/c103.dat with seed 0.123
+->Tcpu 79.73
+
+Solving Instances/c103.dat with seed 0.237
+->Tcpu 90.40
+
+Solving Instances/c103.dat with seed 0.351
+->Tcpu 105.82
+
+Solving Instances/c103.dat with seed 0.468
+->Tcpu 143.72
+
+Solving Instances/c103.dat with seed 0.582
+->Tcpu 84.45
+
+Solving Instances/c103.dat with seed 0.619
+->Tcpu 106.00
+
+Solving Instances/c103.dat with seed 0.703
+->Tcpu 91.66
+
+Solving Instances/c103.dat with seed 0.745
+->Tcpu 117.68
+
+Solving Instances/c103.dat with seed 0.862
+->Tcpu 131.80
+
+Solving Instances/c103.dat with seed 0.974
+->Tcpu 99.14
+
+Solving Instances/c104.dat with seed 0.123
+->Tcpu 48.63
+
+Solving Instances/c104.dat with seed 0.237
+->Tcpu 47.38
+
+Solving Instances/c104.dat with seed 0.351
+->Tcpu 32.05
+
+Solving Instances/c104.dat with seed 0.468
+->Tcpu 45.49
+
+Solving Instances/c104.dat with seed 0.582
+->Tcpu 66.55
+
+Solving Instances/c104.dat with seed 0.619
+->Tcpu 44.91
+
+Solving Instances/c104.dat with seed 0.703
+->Tcpu 77.04
+
+Solving Instances/c104.dat with seed 0.745
+->Tcpu 48.86
+
+Solving Instances/c104.dat with seed 0.862
+->Tcpu 55.92
+
+Solving Instances/c104.dat with seed 0.974
+->Tcpu 39.74

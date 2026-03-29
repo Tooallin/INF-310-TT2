@@ -1,0 +1,131 @@
+reset;
+model MCTOPTW.mod;
+data juguete.dat;
+
+/* Gurobi */
+option solver "./gurobi";
+option gurobi_options 'timelim = 60';
+
+/* Prints Instancia */
+printf "\n\n:::::::::::::::::::::::::: Descripcion de la Instancia ::::::::::::::::::::::::::\n\n";
+printf "Nodo inicial         : %s \n", o;
+printf "Nodo final           : %s \n", s;
+printf "Tmax                 : %s \n", TM;
+printf "Numero de nodos      : %s \n", card(N);
+printf "Numero de rutas      : %s \n", card(M);
+printf "Numero de categorias : %s \n", card(Z);
+for {z in Z} {
+	printf " - Cuota de la categoria %s : %s \n", z, E[z];
+}
+
+/* Parametros */
+param Ttotal default 0;
+
+param TCPU1{objetivos}   default 0;
+param MVF{objetivos}     default 0;
+param PVF{objetivos}     default 0;
+param f1{objetivos}      default 0;
+param f2{objetivos}      default 0;
+param f3{objetivos}		 default 0;
+
+param TCPU2{ejecuciones} default 0;
+param FN1{ejecuciones}   default 0;
+param FN2{ejecuciones}   default 0;
+param FN3{ejecuciones}   default 0;
+param F1{ejecuciones}    default 0;
+param F2{ejecuciones}    default 0;
+param F3{ejecuciones}    default 0;
+param BT1{ejecuciones}   default 0;
+param BT2{ejecuciones}   default 0;
+param BT3{ejecuciones}   default 0;
+
+/* Busqueda de la mejor y peor valor */
+for {oo in objetivos}{
+	printf "Funcion Objetivo : %s\n", oo;
+	let g := oo;
+	objective F01;
+	let Ttotal := time();
+	solve;
+	let TCPU1[oo] := time() - Ttotal;
+	
+	for {i in objetivos}{
+	    if F[i] < MV[i] then {
+	      let MV[i] := F[i];
+	    }
+	    if F[i] > PV[i] then {
+	      let PV[i] := F[i];
+	    }
+	}
+	for {i in objetivos}{
+		let MVF[i] := MV[i];
+		let PVF[i] := PV[i];
+	}
+	
+	let f1[oo] := F[1];
+	let f2[oo] := F[2]; 
+	let f3[oo] := F[3];
+	  
+	reset data x, y, tt, P, P_max, P_min, F;
+}
+
+/* Ajustar valores */
+for {i in objetivos} {
+	let PV[i] := PV[i] + 1;
+	let PVF[i] := PV[i];
+}
+
+/* Busqueda de la frontera de pareto */
+param ultimo;
+param siguiente;
+
+for {ee in ejecuciones}{
+	printf "==> Ejecucion : %s\n", ee;
+	for {i in objetivos}{
+		let betha[i] := sigma[ee,i];
+	}
+	objective F02;
+	let Ttotal := time();
+	solve;
+	let TCPU2[ee] := time() - Ttotal;
+	
+	let FN1[ee] := ( F[1] - PV[1] ) / ( MV[1] - PV[1] );
+	let FN2[ee] := ( F[2] - PV[2] ) / ( MV[2] - PV[2] );
+	let FN3[ee] := ( F[3] - PV[3] ) / ( MV[3] - PV[3] );
+	let F1[ee] := F[1];
+	let F2[ee] := F[2];
+	let F3[ee] := F[3];
+	let BT1[ee] := sigma[ee,1];
+	let BT2[ee] := sigma[ee,2];
+	let BT3[ee] := sigma[ee,3];
+	
+	/* Prints de la solucion */
+	for {m in M} {
+	    printf "Informacion Ruta : %s\n", m;
+	    printf " - Nodos visitados   : ";
+	    let ultimo := o;
+	    printf "%s -> ", ultimo;
+	    for {step in 1..card(N)} {
+	        let siguiente := -1;
+	        for {j in N: j != ultimo and x[ultimo,j,m] = 1} {
+	            let siguiente := j;
+	            break;
+	        }
+	        if siguiente = s then {
+	        	printf "%s", siguiente;
+	        	break;
+	        }
+	        printf "%s (%s) -> ", siguiente, tt[siguiente,m];
+	        let ultimo := siguiente;
+	    }
+	    printf "\n";
+	    printf " - Puntaje            : %s\n", P[m];
+	    printf " - Tiempo de la ruta : %s\n\n", tt[s,m];
+	}
+	
+	reset data x, y, tt, P, P_max, P_min, F;
+}
+
+/* Prints de resultados */
+printf "\n\n";
+display MVF, PVF, TCPU1, f1, f2, f3;
+display FN1, FN2, FN3, F1, F2, F3, TCPU2;
