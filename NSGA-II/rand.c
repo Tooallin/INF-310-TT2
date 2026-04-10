@@ -1,9 +1,7 @@
-/* Definición de las rutinas de generación de números aleatorios y secuencias iniciales */
-
+/* Definition of random number generation routines */
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
-
 # include "global.h"
 # include "rand.h"
 # include <string.h>
@@ -12,7 +10,7 @@ double seed;
 double oldrand[55];
 int jrand;
 
-/* * Inicializa el generador de números aleatorios usando la semilla global */
+/* Get seed number for random and start it up */
 void randomize()
 {
     int j1;
@@ -25,10 +23,7 @@ void randomize()
     return;
 }
 
-/* * "Calienta" el generador. 
- * Aplica un algoritmo matemático para llenar el arreglo de estado inicial 
- * evitando que los primeros números generados tengan patrones predecibles.
- */
+/* Get randomize off and running */
 void warmup_random (double seed)
 {
     int j1, ii;
@@ -54,7 +49,7 @@ void warmup_random (double seed)
     return;
 }
 
-/* * Genera el siguiente lote de 55 números pseudo-aleatorios */
+/* Create next batch of 55 random numbers */
 void advance_random ()
 {
     int j1;
@@ -79,9 +74,7 @@ void advance_random ()
     }
 }
 
-/* * Segmenta una secuencia en M partes iguales (No parece usarse en la versión final 
- * porque no respeta T_max, pero sirve como función auxiliar base).
- */
+/* Splits a sequence by putting M separators */
 void split_sequence(int N, int M, int *sequence) {
 	int total_parts = M + 1;
 	int base = N / total_parts;
@@ -104,10 +97,6 @@ void split_sequence(int N, int M, int *sequence) {
 	}
 }
 
-/* * RUTINA CLAVE DE INICIALIZACIÓN (Sección 3.5 del documento)
- * Toma una secuencia aleatoria de POIs y la divide en M rutas asegurándose de que 
- * CADA ruta respete el tiempo máximo permitido (Restricción 11: T_max).
- */
 void split_sequence_by_duration(problem_instance *pi, int *sequence) {
 	int *temp = (int *)malloc(pi->nPOI * sizeof(int));
 	int *used = (int *)calloc(pi->nPOI, sizeof(int));
@@ -122,28 +111,21 @@ void split_sequence_by_duration(problem_instance *pi, int *sequence) {
 	double return_time;
 	double projected_time;
 
-	// Guarda una copia de la secuencia original aleatoria
 	memcpy(temp, sequence, pi->nPOI * sizeof(int));
 
-	// Construye exactamente M rutas
 	while (route_count < pi->set_M) {
 		double total_time = 0.0;
 		int last_node = origin;
 
-		// Intenta agregar POIs de la secuencia a la ruta actual
 		for (i = 0; i < pi->nPOI; i++) {
-			if (used[i]) continue; // Si ya se usó, lo salta
+			if (used[i]) continue;
 
 			poi = temp[i];
-			// Calcula el tiempo de viaje desde el nodo anterior, el servicio, y el retorno al fin
 			travel_time = pi->param_t[last_node][poi];
 			service_time = pi->set_POI[poi - 1].TT;
 			return_time = pi->param_t[poi][destination];
-			
-			// Proyecta si agregar este nodo violaría T_max
 			projected_time = total_time + travel_time + service_time + return_time;
 
-			// Si es factible en tiempo, lo inserta en la ruta [cite: 372-373]
 			if (projected_time <= pi->param_TM) {
 				sequence[write_idx++] = poi;
 				used[i] = 1;
@@ -152,12 +134,10 @@ void split_sequence_by_duration(problem_instance *pi, int *sequence) {
 			}
 		}
 
-		// Cierra la ruta con el delimitador
 		sequence[write_idx++] = -1;
 		route_count++;
 	}
 
-	// Envía todos los POIs que no cupieron por tiempo al segmento final de "no visitados" [cite: 305]
 	for (i = 0; i < pi->nPOI; i++) {
 		if (!used[i]) {
 			sequence[write_idx++] = temp[i];
@@ -168,18 +148,14 @@ void split_sequence_by_duration(problem_instance *pi, int *sequence) {
 	free(used);
 }
 
-/* * Crea una secuencia aleatoria (permutación) de tamaño N. 
- * Representa el primer paso de la inicialización [cite: 369-370].
- */
+/* Create a random sequence of POI's */
 void random_sequence(int N, int *sequence) {
 	int i, j, temp;
 
-	// Llena el arreglo con números del 1 al N
 	for (i = 0; i < N; i++) {
 		sequence[i] = i + 1;
 	}
 
-	// Algoritmo Fisher-Yates shuffle para desordenar el arreglo aleatoriamente
 	for (i = N - 1; i > 0; i--) {
 		j = rnd(0, i);
 		temp = sequence[i];
@@ -188,7 +164,7 @@ void random_sequence(int N, int *sequence) {
 	}
 }
 
-/* * Obtiene un número aleatorio real entre 0.0 y 1.0 */
+/* Fetch a single random number between 0.0 and 1.0 */
 double randomperc() {
 	jrand++;
 	if (jrand >= 55) {
@@ -198,7 +174,7 @@ double randomperc() {
 	return((double)oldrand[jrand]);
 }
 
-/* * Obtiene un número entero aleatorio entre 'low' y 'high' (inclusive) */
+/* Fetch a single random integer between low and high including the bounds */
 int rnd (int low, int high)
 {
     int res;
@@ -217,7 +193,7 @@ int rnd (int low, int high)
     return (res);
 }
 
-/* * Obtiene un número real aleatorio entre 'low' y 'high' (inclusive) */
+/* Fetch a single random real number between low and high including the bounds */
 double rndreal (double low, double high)
 {
     return (low + (high-low)*randomperc());

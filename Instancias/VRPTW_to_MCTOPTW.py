@@ -115,19 +115,19 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
     for i, n_id in enumerate(poi):
         node_categories[n_id] = assignment_list[i]
 
-    # 5. Escribir el archivo .DAT
+    # 5. Escribir el archivo .DAT (CORREGIDO PARA C)
     with open(dat_filepath, 'w') as file:
-        file.write(f"param o := 0;\n")
-        file.write(f"param s := {s_id};\n\n")
+        file.write(f"o:= 0;\n")
+        file.write(f"s:= {s_id};\n\n")
         
-        file.write(f"set POI := {' '.join(poi)};\n")
-        file.write(f"set M := {' '.join(set_m)};\n")
-        file.write(f"set Z := {' '.join(set_z)};\n\n")
+        file.write(f"POI:= {' '.join(poi)};\n")
+        file.write(f"M:= {' '.join(set_m)};\n")
+        file.write(f"Z:= {' '.join(set_z)};\n\n")
         
-        file.write(f"param TM := {tm};\n\n")
+        file.write(f"TM:= {tm};\n\n")
         
         # Parámetro E (Relajación según rareza)
-        file.write("param E :=\n")
+        file.write("E:=\n")
         for z in range(1, z_max + 1):
             # Relajación lineal: rho va de 0.5 (mitad permitida) a 1.0 (totalmente relajado)
             if z_max > 1:
@@ -141,7 +141,7 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
         file.write(";\n\n")
         
         # Parámetro e
-        file.write("param e :=\n")
+        file.write("e:=\n")
         for n in nodes:
             line = []
             for z in range(1, z_max + 1):
@@ -150,27 +150,27 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
             file.write(" ".join(line) + "\n")
         file.write(";\n\n")
         
-        file.write("param SCORE :=\n")
+        file.write("SCORE:=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['score'])}\n")
         file.write(";\n\n")
         
-        file.write("param OT :=\n")
+        file.write("OT:=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['ot'])}\n")
         file.write(";\n\n")
         
-        file.write("param TT :=\n")
+        file.write("TT:=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['tt'])}\n")
         file.write(";\n\n")
         
-        file.write("param CT :=\n")
+        file.write("CT:=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['ct'])}\n")
         file.write(";\n\n")
         
-        file.write("param t :=\n")
+        file.write("t:=\n")
         for n1 in nodes:
             for n2 in nodes:
                 if n1['id'] != n2['id']:
