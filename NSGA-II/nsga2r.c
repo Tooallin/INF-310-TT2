@@ -4,6 +4,8 @@
 # include <math.h>
 # include <unistd.h>
 # include <string.h>
+# include <sys/stat.h>
+# include <sys/types.h>
 # include "global.h"
 # include "rand.h"
 
@@ -43,15 +45,14 @@ int main (int argc, char **argv) {
 	int debug;
 	char *instance_route;
 	char *instance_name;
-	char fpt1_route[256];
-	char fpt2_route[256];
-	char fpt3_route[256];
-	char fpt4_route[256];
-	char fpt5_route[256];
+	char output_dir[512];
+	char fpt1_route[512];
+	char fpt2_route[512];
+	char fpt3_route[512];
+	char fpt5_route[512];
 	FILE *fpt1;
 	FILE *fpt2;
 	FILE *fpt3;
-	FILE *fpt4;
 	FILE *fpt5;
 	problem_instance *pi;
 	population *parent_pop;
@@ -79,21 +80,22 @@ int main (int argc, char **argv) {
 	} else {
 		instance_name = instance_route;
 	}
-	sprintf(fpt1_route, "Outputs/initial_pop_%s_%.3f.out", instance_name, seed);
-	sprintf(fpt2_route, "Outputs/final_pop_%s_%.3f.out", instance_name, seed);
-	sprintf(fpt3_route, "Outputs/best_pop_%s_%.3f.out", instance_name, seed);
-	sprintf(fpt4_route, "Outputs/all_pop_%s_%.3f.out", instance_name, seed);
-	sprintf(fpt5_route, "Outputs/params_%s_%.3f.out", instance_name, seed);
+
+	snprintf(output_dir, sizeof(output_dir), "Outputs/%s", instance_name);
+    mkdir(output_dir, 0777);
+
+	snprintf(fpt1_route, sizeof(fpt1_route), "%s/initial_pop_%s_%.3f.out", output_dir, instance_name, seed);
+    snprintf(fpt2_route, sizeof(fpt2_route), "%s/final_pop_%s_%.3f.out", output_dir, instance_name, seed);
+    snprintf(fpt3_route, sizeof(fpt3_route), "%s/best_pop_%s_%.3f.out", output_dir, instance_name, seed);
+    snprintf(fpt5_route, sizeof(fpt5_route), "%s/params_%s_%.3f.out", output_dir, instance_name, seed);
 
 	fpt1 = fopen(fpt1_route,"w");
 	fpt2 = fopen(fpt2_route,"w");
 	fpt3 = fopen(fpt3_route,"w");
-	fpt4 = fopen(fpt4_route,"w");
 	fpt5 = fopen(fpt5_route,"w");
 	fprintf(fpt1,"# This file contains the data of initial population\n");
 	fprintf(fpt2,"# This file contains the data of final population\n");
 	fprintf(fpt3,"# This file contains the data of final feasible population (if found)\n");
-	fprintf(fpt4,"# This file contains the data of all generations\n");
 	fprintf(fpt5,"# This file contains information about inputs as read by the program\n");
 
 	readInputFile(instance_route, pi);
@@ -153,7 +155,6 @@ int main (int argc, char **argv) {
 	fprintf(fpt1,"# of objectives = %d, # of constraints = %d, # of real_var = %d, # of bits of bin_var = %d, constr_violation, rank, crowding_distance\n", n_objectives, n_constraints, nreal, bitlength);
 	fprintf(fpt2,"# of objectives = %d, # of constraints = %d, # of real_var = %d, # of bits of bin_var = %d, constr_violation, rank, crowding_distance\n", n_objectives, n_constraints, nreal, bitlength);
 	fprintf(fpt3,"# of objectives = %d, # of constraints = %d, # of real_var = %d, # of bits of bin_var = %d, constr_violation, rank, crowding_distance\n", n_objectives, n_constraints, nreal, bitlength);
-	fprintf(fpt4,"# of objectives = %d, # of constraints = %d, # of real_var = %d, # of bits of bin_var = %d, constr_violation, rank, crowding_distance\n", n_objectives, n_constraints, nreal, bitlength);
 	
 	nbinmut = 0;
 	nrealmut = 0;
@@ -177,8 +178,6 @@ int main (int argc, char **argv) {
 	if (debug) printf("\n Rank and Crowding distance done\n");
 	report_pop(parent_pop, fpt1);
 	if (debug) printf("\n Report done\n");
-	fprintf(fpt4,"# gen = 1\n");
-	report_pop(parent_pop,fpt4);
 	if (debug) printf("\n gen = 1");
 	fflush(stdout);
 
@@ -188,7 +187,6 @@ int main (int argc, char **argv) {
 	fflush(fpt1);
 	fflush(fpt2);
 	fflush(fpt3);
-	fflush(fpt4);
 	fflush(fpt5);
 	sleep(1);
 	for (i = 2; i <= ngen; i++) {
@@ -200,9 +198,6 @@ int main (int argc, char **argv) {
 		fill_nondominated_sort (mixed_pop, parent_pop);
 		/* Comment following four lines if information for all
 		generations is not desired, it will speed up the execution */
-		fprintf(fpt4,"# gen = %d\n",i);
-		report_pop(parent_pop,fpt4);
-		fflush(fpt4);
 		if (debug) printf("\n gen = %d",i);
 	}
 	if (debug) printf("\n Generations finished, now reporting solutions");
@@ -220,12 +215,10 @@ int main (int argc, char **argv) {
 	fflush(fpt1);
 	fflush(fpt2);
 	fflush(fpt3);
-	fflush(fpt4);
 	fflush(fpt5);
 	fclose(fpt1);
 	fclose(fpt2);
 	fclose(fpt3);
-	fclose(fpt4);
 	fclose(fpt5);
 	if (nbin != 0){
 		free (min_binvar);
