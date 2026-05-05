@@ -1,6 +1,6 @@
 import math
 
-def generar_instancia_juguete(dat_filepath="juguete_16POI_3FO.dat"):
+def generar_instancia_juguete(dat_filepath="toy-instances/toy.dat"):
     nodos = []
     
     # Nodo 0: Depósito Inicial (Centro)
@@ -48,13 +48,13 @@ def generar_instancia_juguete(dat_filepath="juguete_16POI_3FO.dat"):
         f.write("param E :=\n1 30\n2 30\n3 30\n;\n\n")
         
         # Parámetro e (Asignación equitativa básica para que el modelo no falle)
-        f.write("param e :=\n")
+        f.write("param e : 1 2 3 :=\n")
         for n in nodos:
             cat = (n['id'] % 3) + 1
             e1 = 1 if cat == 1 and n['id'] not in [0,17] else 0
             e2 = 1 if cat == 2 and n['id'] not in [0,17] else 0
             e3 = 1 if cat == 3 and n['id'] not in [0,17] else 0
-            f.write(f"{n['id']} 1 {e1} 2 {e2} 3 {e3}\n")
+            f.write(f"{n['id']}   {e1} {e2} {e3}\n")
         f.write(";\n\n")
         
         # Scores
@@ -81,6 +81,24 @@ def generar_instancia_juguete(dat_filepath="juguete_16POI_3FO.dat"):
                     f.write(f"{n1['id']} {n2['id']} {round(dist, 2)}\n")
         f.write(";\n")
         
+        # Parámetro sigma: Generación dinámica usando Método Das-Dennis
+        H = 5 # Particiones (H=5 genera 21 ejecuciones para 3 objetivos)
+        ejecuciones = []
+        
+        # Generar las combinaciones donde w1 + w2 + w3 = H
+        for w1 in range(H + 1):
+            for w2 in range(H + 1 - w1):
+                w3 = H - w1 - w2
+                # Normalizar dividiendo por H para que sumen 1.0
+                ejecuciones.append((w1/H, w2/H, w3/H))
+        
+        # Escribir a archivo
+        f.write("param cantejc := " + str(len(ejecuciones)) + ";\n")
+        f.write("param sigma : 1 2 3 :=\n")
+        for idx, (s1, s2, s3) in enumerate(ejecuciones, start=1):
+            # Imprimir con 4 decimales para mayor precisión
+            f.write(f"{idx}   {s1:.4f} {s2:.4f} {s3:.4f}\n")
+        f.write(";\n\n")
     print(f"Instancia generada con éxito: {dat_filepath}")
 
 if __name__ == '__main__':

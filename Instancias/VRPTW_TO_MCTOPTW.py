@@ -7,7 +7,6 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
     nodes = []
     reading_customers = False
     
-    vehicle_number = 1
     vehicle_capacity = 1
     
     # Fijamos una semilla para que el resultado aleatorio sea reproducible
@@ -117,17 +116,17 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
 
     # 5. Escribir el archivo .DAT (CORREGIDO PARA C)
     with open(dat_filepath, 'w') as file:
-        file.write(f"o:= 0;\n")
-        file.write(f"s:= {s_id};\n\n")
+        file.write(f"param o := 0;\n")
+        file.write(f"param s := {s_id};\n\n")
         
-        file.write(f"POI:= {' '.join(poi)};\n")
-        file.write(f"M:= {' '.join(set_m)};\n")
-        file.write(f"Z:= {' '.join(set_z)};\n\n")
+        file.write(f"set POI := {' '.join(poi)};\n")
+        file.write(f"set M := {' '.join(set_m)};\n")
+        file.write(f"set Z := {' '.join(set_z)};\n\n")
         
-        file.write(f"TM:= {tm};\n\n")
+        file.write(f"param TM := {tm};\n\n")
         
         # Parámetro E (Relajación según rareza)
-        file.write("E:=\n")
+        file.write("param E :=\n")
         for z in range(1, z_max + 1):
             # Relajación lineal: rho va de 0.5 (mitad permitida) a 1.0 (totalmente relajado)
             if z_max > 1:
@@ -141,43 +140,55 @@ def convert_vrptw_to_dat(txt_filepath, dat_filepath):
         file.write(";\n\n")
         
         # Parámetro e
-        file.write("e:=\n")
+        file.write(f"param e : {' '.join(set_z)} :=\n")
         for n in nodes:
-            line = []
+            line = [str(n['id'])]
             for z in range(1, z_max + 1):
                 belongs = 1 if (str(n['id']) in poi and node_categories.get(str(n['id'])) == z) else 0
-                line.append(f"{n['id']} {z} {belongs}")
-            file.write(" ".join(line) + "\n")
+                line.append(str(belongs))
+            file.write("   ".join(line) + "\n")
         file.write(";\n\n")
         
-        file.write("SCORE:=\n")
+        file.write("param SCORE :=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['score'])}\n")
         file.write(";\n\n")
         
-        file.write("OT:=\n")
+        file.write("param OT :=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['ot'])}\n")
         file.write(";\n\n")
         
-        file.write("TT:=\n")
+        file.write("param TT :=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['tt'])}\n")
         file.write(";\n\n")
         
-        file.write("CT:=\n")
+        file.write("param CT :=\n")
         for n in nodes:
             file.write(f"{n['id']} {int(n['ct'])}\n")
         file.write(";\n\n")
         
-        file.write("t:=\n")
+        file.write("param t :=\n")
         for n1 in nodes:
             for n2 in nodes:
                 if n1['id'] != n2['id']:
                     dist = math.sqrt((n2['x'] - n1['x'])**2 + (n2['y'] - n1['y'])**2)
                     dist_rounded = round(dist, 2)
                     file.write(f"{n1['id']} {n2['id']} {dist_rounded}\n")
-        file.write(";\n")
+        file.write(";\n\n")
+
+        H = 5
+        ejecuciones = []
+        for w1 in range(H + 1):
+            for w2 in range(H + 1 - w1):
+                w3 = H - w1 - w2
+                ejecuciones.append((w1/H, w2/H, w3/H))
+                
+        file.write("param sigma : 1 2 3 :=\n")
+        for idx, (s1, s2, s3) in enumerate(ejecuciones, start=1):
+            file.write(f"{idx}   {s1:.4f} {s2:.4f} {s3:.4f}\n")
+        file.write(";\n\n")
         
     return True
 
@@ -191,7 +202,7 @@ def process_all_folders(base_directory):
     print(f"Buscando archivos .txt en: {base_path.absolute()}")
     procesados = 0
     
-    for txt_file in base_path.rglob('*.txt'):
+    for txt_file in base_path.rglob('*.[tT][xX][tT]'):
         dat_file = txt_file.with_suffix('.dat')
         
         try:

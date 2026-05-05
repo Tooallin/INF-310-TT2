@@ -1,10 +1,10 @@
 reset;
 model MCTOPTW.mod;
-data juguete.dat;
+data __INSTANCIA__;
 
 /* Gurobi */
-option solver "./gurobi";
-option gurobi_options 'timelim = 60';
+option solver "gurobi";
+option gurobi_options 'timelim = 150';
 
 /* Prints Instancia */
 printf "\n\n:::::::::::::::::::::::::: Descripcion de la Instancia ::::::::::::::::::::::::::\n\n";

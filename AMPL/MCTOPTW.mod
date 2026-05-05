@@ -21,7 +21,7 @@ param BIG default 10000; # numero muy grande
 param cantobj := 3;      # cantidad de objetivos del problema
 
 /* Conjuntos, Parametros y Variables para la Normalizacion */
-param cantejc := 11;                   # cantidad de ejecuciones para la frontera de pareto
+param cantejc := 21;                   # cantidad de ejecuciones para la frontera de pareto
 set objetivos := {1..cantobj};         # conjunto de objetivos del problema
 set ejecuciones := {1..cantejc};       # conjunto de ejecuciones para la frontera de pareto
 param g default 0;                     # identifica un objetivo en particular
