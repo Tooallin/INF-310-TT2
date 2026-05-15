@@ -11,6 +11,7 @@ ParamILS-V0/salida2
 ParamILS-V0/quality.out
 ParamILS-V0/ParamILS_ANSGA2_IAll_S2.out
 ParamILS-V0/out/
+ParamILS-V0/NSGA-II-V0/Outputs/
 ParamILS-V0/NSGA-II-V0/*.log
 NSGA-II-V1/Outputs/
 NSGA-II-V1/*.log
@@ -21,6 +22,7 @@ ParamILS-V1/salida2
 ParamILS-V1/quality.out
 ParamILS-V1/ParamILS_ANSGA2_IAll_S2.out
 ParamILS-V1/out/
+ParamILS-V1/NSGA-II-V1/Outputs/
 ParamILS-V1/NSGA-II-V1/*.log
 NSGA-II-V2/Outputs/
 NSGA-II-V2/*.log
@@ -31,6 +33,7 @@ ParamILS-V2/salida2
 ParamILS-V2/quality.out
 ParamILS-V2/ParamILS_ANSGA2_IAll_S2.out
 ParamILS-V2/out/
+ParamILS-V2/NSGA-II-V2/Outputs/
 ParamILS-V2/NSGA-II-V2/*.log
 NSGA-II-V3/Outputs/
 NSGA-II-V3/*.log
@@ -41,4 +44,5 @@ ParamILS-V3/salida2
 ParamILS-V3/quality.out
 ParamILS-V3/ParamILS_ANSGA2_IAll_S2.out
 ParamILS-V3/out/
+ParamILS-V3/NSGA-II-V3/Outputs/
 ParamILS-V3/NSGA-II-V3/*.log
