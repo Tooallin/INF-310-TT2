@@ -18,10 +18,17 @@ with open(archivo_template, "r", encoding="utf-8") as f:
 
 # Iterar sobre todos los archivos .dat en la carpeta
 for archivo_dat in carpeta_instancias.glob("*.dat"):
+    # Definir el archivo de salida (.log)
+    archivo_log = carpeta_resultados / f"{archivo_dat.stem}.log"
+
+    # Comprobar si el archivo .log ya existe en la carpeta Resultados
+    if archivo_log.exists():
+        print(f"Saltando: {archivo_dat.name} (Ya existe su archivo .log)")
+        continue
+    
     print(f"Iniciando ejecución para: {archivo_dat.name}")
     
     # Reemplazar el comodín con la ruta real de la instancia
-    # AMPL requiere barras normales (/), as_posix() asegura esto en cualquier SO
     ruta_instancia = archivo_dat.as_posix()
     nuevo_run = template_contenido.replace("data __INSTANCIA__;", f"data {ruta_instancia};")
     

@@ -84,7 +84,7 @@ def main():
             nd_solutions = filter_non_dominated(all_solutions)
 
             # Limpiar el nombre de la instancia (quitar "_nsga2" si está presente en el nombre de la carpeta)
-            clean_instance_name = instance_folder.replace("_nsga2", "").replace("nsga2", "")
+            clean_instance_name = instance_folder.replace(".dat", "")
 
             # Escribir el archivo en la carpeta de destino
             write_output(clean_instance_name, nd_solutions, output_dir)

@@ -1,0 +1,819 @@
+
+
+:::::::::::::::::::::::::: Descripcion de la Instancia ::::::::::::::::::::::::::
+
+Nodo inicial         : 0 
+Nodo final           : 1001 
+Tmax                 : 1821 
+Numero de nodos      : 1002 
+Numero de rutas      : 6 
+Numero de categorias : 7 
+ - Cuota de la categoria 1 : 252 
+ - Cuota de la categoria 2 : 147 
+ - Cuota de la categoria 3 : 84 
+ - Cuota de la categoria 4 : 48 
+ - Cuota de la categoria 5 : 27 
+ - Cuota de la categoria 6 : 15 
+ - Cuota de la categoria 7 : 8 
+Funcion Objetivo : 1
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective -214
+32966 simplex iterations
+1 branching node
+absmipgap=11329, relmipgap=52.9393
+Funcion Objetivo : 2
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+0 simplex iterations
+absmipgap=4.08961e-06, relmipgap=0
+Funcion Objetivo : 3
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+0 simplex iterations
+1 branching node
+==> Ejecucion : 1
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+0 simplex iterations
+1 branching node
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 2
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+10486 simplex iterations
+1 branching node
+absmipgap=1.56674e-07, relmipgap=0
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 3
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+736 simplex iterations
+1 branching node
+absmipgap=3.13348e-07, relmipgap=0
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 4
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+2831 simplex iterations
+1 branching node
+absmipgap=1.97512e-07, relmipgap=0
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 5
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+1631 simplex iterations
+1 branching node
+absmipgap=6.26697e-07, relmipgap=0
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 6
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: optimal solution; objective 0
+0 simplex iterations
+absmipgap=5.37139e-09, relmipgap=0
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 7
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1990697674
+28557 simplex iterations
+1 branching node
+absmipgap=10.738, relmipgap=53.941
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 8
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1990697674
+18225 simplex iterations
+1 branching node
+absmipgap=7.98228, relmipgap=40.0979
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 9
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1990697674
+13675 simplex iterations
+1 branching node
+absmipgap=5.66748, relmipgap=28.4698
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 10
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1990697674
+15960 simplex iterations
+1 branching node
+absmipgap=3.73499, relmipgap=18.7622
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 11
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1874730653
+8894 simplex iterations
+1 branching node
+absmipgap=2.29346, relmipgap=12.2335
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 659 (145) -> 149 (161.4) -> 1001
+ - Puntaje            : 50
+ - Tiempo de la ruta : 179.459999999995
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 176 (62) -> 1001
+ - Puntaje            : 20
+ - Tiempo de la ruta : 74.24000000000007
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 779 (9) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 26.27999999999997
+
+==> Ejecucion : 12
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.3682952143
+29106 simplex iterations
+1 branching node
+absmipgap=21.4462, relmipgap=58.231
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 176 (2.239999999999544) -> 793 (15.23999999999926) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 30.33999999999907
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 757 (1575) -> 1001
+ - Puntaje            : 26
+ - Tiempo de la ruta : 1612.2
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 871 (53) -> 101 (68) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 91.6
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 230 (6) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 22
+
+==> Ejecucion : 13
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.3981395349
+21310 simplex iterations
+1 branching node
+absmipgap=18.7203, relmipgap=47.0195
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 14
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.3981395349
+14534 simplex iterations
+1 branching node
+absmipgap=15.9646, relmipgap=40.0979
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 15
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.1771541542
+17343 simplex iterations
+1 branching node
+absmipgap=13.2593, relmipgap=74.846
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 176 (2.239999999999085) -> 793 (15.23999999999895) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 30.33999999999894
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 149 (112) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 130.0599999999999
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 230 (18.54) -> 779 (30.78) -> 252 (50) -> 991 (62.24) -> 101 (79.3099999999998) -> 659 (96.30999999999965) -> 59 (108.55) -> 1001
+ - Puntaje            : 120
+ - Tiempo de la ruta : 124.95
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 427 (1256) -> 590 (1286.619999999998) -> 1001
+ - Puntaje            : 48
+ - Tiempo de la ruta : 1324.279999999998
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 16
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.3808110705
+31254 simplex iterations
+1 branching node
+absmipgap=31.9977, relmipgap=84.0251
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 757 (1575) -> 1001
+ - Puntaje            : 26
+ - Tiempo de la ruta : 1612.2
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 149 (112) -> 59 (126.24) -> 1001
+ - Puntaje            : 40
+ - Tiempo de la ruta : 142.6399999999989
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 230 (6) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 22
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 795 (1692) -> 1001
+ - Puntaje            : 20
+ - Tiempo de la ruta : 1728.4
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 779 (14.92999999999977) -> 871 (28.5399999999999) -> 176 (46.6) -> 101 (68) -> 659 (85) -> 1001
+ - Puntaje            : 100
+ - Tiempo de la ruta : 102.21
+
+==> Ejecucion : 17
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.4656689721
+20018 simplex iterations
+1 branching node
+absmipgap=29.3268, relmipgap=62.9778
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 757 (1575) -> 1001
+ - Puntaje            : 26
+ - Tiempo de la ruta : 1612.2
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 291 (1268.4) -> 214 (1309.8) -> 296 (1360.32) -> 368 (1430) -> 744 (1484.55) -> 1001
+ - Puntaje            : 139
+ - Tiempo de la ruta : 1541.97
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 18
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective -0.07208680575
+16675 simplex iterations
+1 branching node
+absmipgap=26.0333, relmipgap=361.138
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 779 (61.76000000000062) -> 871 (75.37000000000062) -> 991 (90.37000000000029) -> 659 (111) -> 101 (128) -> 59 (147.06) -> 149 (161.3) -> 1001
+ - Puntaje            : 140
+ - Tiempo de la ruta : 179.36
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 427 (1266.36) -> 590 (1296.98) -> 296 (1360.32) -> 368 (1430) -> 744 (1484.55) -> 1001
+ - Puntaje            : 133
+ - Tiempo de la ruta : 1541.97
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 230 (6) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 22
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 757 (1635) -> 1001
+ - Puntaje            : 26
+ - Tiempo de la ruta : 1672.2
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 176 (2.239999999999043) -> 793 (15.23999999999904) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 30.33999999999467
+
+==> Ejecucion : 19
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.6804997117
+34746 simplex iterations
+1 branching node
+absmipgap=42.8363, relmipgap=62.9484
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 795 (1692) -> 1001
+ - Puntaje            : 20
+ - Tiempo de la ruta : 1728.4
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 230 (6) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 22
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 793 (5.1) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 20.2
+
+==> Ejecucion : 20
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective -0.06131450954
+21582 simplex iterations
+1 branching node
+absmipgap=39.3388, relmipgap=641.59
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 427 (1256) -> 590 (1286.62) -> 1001
+ - Puntaje            : 48
+ - Tiempo de la ruta : 1324.28
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 793 (32.56) -> 779 (46.17) -> 176 (62) -> 871 (80.06) -> 991 (95.06) -> 659 (115.69) -> 149 (132.09) -> 59 (146.33) -> 1001
+ - Puntaje            : 150
+ - Tiempo de la ruta : 162.73
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 230 (49.94) -> 101 (68) -> 1001
+ - Puntaje            : 30
+ - Tiempo de la ruta : 91.6
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 757 (1575) -> 1001
+ - Puntaje            : 26
+ - Tiempo de la ruta : 1612.2
+
+==> Ejecucion : 21
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, feasible solution; objective 0.06511627907
+26950 simplex iterations
+1 branching node
+absmipgap=52.7581, relmipgap=810.214
+Informacion Ruta : 1
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 -> 1001
+ - Puntaje            : 0
+ - Tiempo de la ruta : 103.94
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 -> 779 (9) -> 230 (21.23999999999999) -> 1001
+ - Puntaje            : 40
+ - Tiempo de la ruta : 37.23999999999999
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 -> 793 (65) -> 1001
+ - Puntaje            : 10
+ - Tiempo de la ruta : 80.1
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 -> 871 (22) -> 991 (37) -> 176 (59.65) -> 101 (81.05) -> 59 (100.11) -> 149 (114.35) -> 659 (130.75) -> 1001
+ - Puntaje            : 130
+ - Tiempo de la ruta : 147.96
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 -> 795 (1692) -> 1001
+ - Puntaje            : 20
+ - Tiempo de la ruta : 1728.4
+
+
+
+:   MVF     PVF   TCPU1    f1      f2     f3     :=
+1   -214     1      272   -214   791.96   120
+2      0   792.96   214      0     0        0
+3      0   121      280      0     0        0
+;
+
+:       FN1         FN2          FN3        F1      F2     F3   TCPU2    :=
+1    0.00465116   1           1               0     0        0    533
+2    0.00465116   1           1               0     0        0    508
+3    0.00465116   1           1               0     0        0    319
+4    0.00465116   1           1               0     0        0    310
+5    0.00465116   1           1               0     0        0    853
+6    0.00465116   1           1               0     0        0    243
+7    0.00465116   1           1               0     0        0    689
+8    0.00465116   1           1               0     0        0    385
+9    0.00465116   1           1               0     0        0    362
+10   0.00465116   1           1               0     0        0    470
+11   0.469767     0.898217    0.586777     -100    80.71    50    569
+12   0.451163     0.79149     0.752066      -96   165.34    30    849
+13   0.00465116   1           1               0     0        0    611
+14   0.00465116   1           1               0     0        0   1434
+15   1.06512      0.661332    0.00826446   -228   268.55   120   1497
+16   0.916279     0.64379     0.173554     -196   282.46   100    433
+17   0.772093     0.504136   -0.14876      -165   393.2    139   1226
+18   1.5814       0.308124   -0.157025     -339   548.63   140    454
+19   0.190698     0.867585    0.834711      -40   105       20   1042
+20   1.18605      0.562387   -0.239669     -254   347.01   150    434
+21   0.934884     0.679076   -0.0743802    -200   254.48   130    904
+;
+

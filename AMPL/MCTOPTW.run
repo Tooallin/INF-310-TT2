@@ -48,22 +48,26 @@ for {oo in objetivos}{
 	solve;
 	let TCPU1[oo] := time() - Ttotal;
 	
-	for {i in objetivos}{
-	    if F[i] < MV[i] then {
-	      let MV[i] := F[i];
-	    }
-	    if F[i] > PV[i] then {
-	      let PV[i] := F[i];
-	    }
+	if solve_result != "infeasible" then {
+		for {i in objetivos}{
+			if F[i] < MV[i] then {
+				let MV[i] := F[i];
+			}
+			if F[i] > PV[i] then {
+				let PV[i] := F[i];
+			}
+		}
+		for {i in objetivos}{
+			let MVF[i] := MV[i];
+			let PVF[i] := PV[i];
+		}
+		
+		let f1[oo] := F[1];
+		let f2[oo] := F[2]; 
+		let f3[oo] := F[3];
+	} else {
+		printf " -> Advertencia: Instancia infactible o sin solucion para objetivo %s\n", oo;
 	}
-	for {i in objetivos}{
-		let MVF[i] := MV[i];
-		let PVF[i] := PV[i];
-	}
-	
-	let f1[oo] := F[1];
-	let f2[oo] := F[2]; 
-	let f3[oo] := F[3];
 	  
 	reset data x, y, tt, P, P_max, P_min, F;
 }
@@ -87,6 +91,10 @@ for {ee in ejecuciones}{
 	let Ttotal := time();
 	solve;
 	let TCPU2[ee] := time() - Ttotal;
+
+	for {i in 1..3} {
+		if MV[i] == PV[i] then let PV[i] := MV[i] + 1; 
+	}
 	
 	let FN1[ee] := ( F[1] - PV[1] ) / ( MV[1] - PV[1] );
 	let FN2[ee] := ( F[2] - PV[2] ) / ( MV[2] - PV[2] );
@@ -100,26 +108,35 @@ for {ee in ejecuciones}{
 	
 	/* Prints de la solucion */
 	for {m in M} {
-	    printf "Informacion Ruta : %s\n", m;
-	    printf " - Nodos visitados   : ";
-	    let ultimo := o;
-	    printf "%s -> ", ultimo;
-	    for {step in 1..card(N)} {
-	        let siguiente := -1;
-	        for {j in N: j != ultimo and x[ultimo,j,m] = 1} {
-	            let siguiente := j;
-	            break;
-	        }
-	        if siguiente = s then {
-	        	printf "%s", siguiente;
-	        	break;
-	        }
-	        printf "%s (%s) -> ", siguiente, tt[siguiente,m];
-	        let ultimo := siguiente;
-	    }
-	    printf "\n";
-	    printf " - Puntaje            : %s\n", P[m];
-	    printf " - Tiempo de la ruta : %s\n\n", tt[s,m];
+		printf "Informacion Ruta : %s\n", m;
+		printf " - Nodos visitados   : ";
+		let ultimo := o;
+		printf "%s -> ", ultimo;
+		for {step in 1..card(N)} {
+			let siguiente := -1;
+			for {j in N: j != ultimo and x[ultimo,j,m] >= 0.5} {
+				let siguiente := j;
+				break;
+			}
+			if siguiente = -1 then {
+				printf " [Sin ruta o ruta incompleta]";
+				break;
+			}
+			if siguiente = s then {
+				printf "%s", siguiente;
+				break;
+			}
+			printf "%s (%s) -> ", siguiente, tt[siguiente,m];
+			let ultimo := siguiente;
+		}
+		printf "\n";
+		if solve_result != "infeasible" and time() - Ttotal < 1500 then {
+			printf " - Puntaje            : %s\n", P[m];
+			printf " - Tiempo de la ruta : %s\n\n", tt[s,m];
+		} else {
+			printf " - Puntaje            : 0\n";
+			printf " - Tiempo de la ruta : 0\n\n";
+		}
 	}
 	
 	reset data x, y, tt, P, P_max, P_min, F;
