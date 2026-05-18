@@ -25,7 +25,7 @@ void mutation_ind(individual *ind, problem_instance *pi) {
 	if (prob <= pmut_bin) {
 		prob_op = randomperc();
 
-		if (prob_op <= 0.70) {
+		if (prob_op <= pmut_greedy) {
 			choice = rnd(5, 7);
 		} else {
 			choice = rnd(1, 4);

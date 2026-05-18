@@ -10,8 +10,8 @@ random_seeds = [
 
 popsize = 100
 ngen = 300000
-pcross = 0.8
-pmut = 0.1
+pcross = 0.75
+pmut = 0.6
 
 # === Carga dinámica de instancias ===
 
@@ -20,7 +20,13 @@ base_dir = Path("../Instancias")
 
 # 2. Lista de las subcarpetas que contienen las instancias
 carpetas_instancias = [
+	"toy-instances",
 	"solomon-100",
+	"homberger_200_customer_instances",
+	"homberger_400_customer_instances",
+	"homberger_600_customer_instances",
+	"homberger_800_customer_instances",
+	"homberger_1000_customer_instances",
 ]
 
 instance_routes = []

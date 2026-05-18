@@ -186,7 +186,7 @@ int main (int argc, char **argv) {
     report_pop(parent_pop, fpt1);
     
     if (debug) printf("\n Report done\n");
-    if (debug) printf("\n gen = 1");
+    // if (debug) printf("\n gen = 1");
     fflush(stdout);
 
     /*if (choice!=0)
@@ -207,7 +207,7 @@ int main (int argc, char **argv) {
         fill_nondominated_sort (mixed_pop, parent_pop);
         /* Comment following four lines if information for all
         generations is not desired, it will speed up the execution */
-        if (debug) printf("\n gen = %d",i);
+        // if (debug) printf("\n gen = %d",i);
     }
     if (debug) printf("\n Generations finished, now reporting solutions");
     

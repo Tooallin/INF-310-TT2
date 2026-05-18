@@ -59,6 +59,8 @@ extern double pcross_real;
 extern double pcross_bin;
 extern double pmut_real;
 extern double pmut_bin;
+extern double pcross_greedy;
+extern double pmut_greedy;
 extern double eta_c;
 extern double eta_m;
 extern int ngen;

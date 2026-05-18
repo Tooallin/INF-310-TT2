@@ -1,7 +1,0 @@
-# This file contains information about inputs as read by the program
-
- Population size = 100
- Number of generations = 300000
- Number of objective functions = 3
- Number of binary variables = 0
- Seed for random number generator = 1.230000e-01

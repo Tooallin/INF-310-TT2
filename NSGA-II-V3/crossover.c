@@ -7,19 +7,21 @@
 
 /* Function to cross two individuals */
 void crossover(individual *parent1, individual *parent2, individual *child1, individual *child2, problem_instance *pi) {
-	double prob_cross = randomperc();
+	double prob_type = randomperc();
 
-	if (prob_cross <= 0.40) {
+	if (prob_type <= pcross_greedy) {
 		erc_crossover(parent1, parent2, child1, pi);
 		erc_crossover(parent2, parent1, child2, pi);
-	} 
-	else if (prob_cross <= 0.80) {
-		subtour_crossover(parent1, parent2, child1);
-		subtour_crossover(parent2, parent1, child2);
-	}
-	else {
-		rbx_crossover(parent1, parent2, child1);
-		rbx_crossover(parent2, parent1, child2);
+	} else {
+		double prob_rand = randomperc();
+		if (prob_rand <= 0.50) {
+			subtour_crossover(parent1, parent2, child1);
+			subtour_crossover(parent2, parent1, child2);
+		}
+		else {
+			rbx_crossover(parent1, parent2, child1);
+			rbx_crossover(parent2, parent1, child2);
+		}
 	}
 	return;
 }

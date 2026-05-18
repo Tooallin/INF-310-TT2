@@ -1,6 +1,6 @@
 reset;
 model MCTOPTW.mod;
-data Instancias/C2_6_6.dat;
+data Instancias/RC2_10_6.dat;
 
 /* Gurobi */
 option solver "gurobi";

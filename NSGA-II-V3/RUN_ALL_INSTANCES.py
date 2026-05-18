@@ -10,8 +10,10 @@ random_seeds = [
 
 popsize = 100
 ngen = 300000
-pcross = 0.8
-pmut = 0.1
+pcross = 0.75
+pmut = 0.6
+pcross_greedy = 0.5
+pmut_greedy = 0.5
 
 # === Carga dinámica de instancias ===
 
@@ -20,7 +22,13 @@ base_dir = Path("../Instancias")
 
 # 2. Lista de las subcarpetas que contienen las instancias
 carpetas_instancias = [
+	"toy-instances",
 	"solomon-100",
+	"homberger_200_customer_instances",
+	"homberger_400_customer_instances",
+	"homberger_600_customer_instances",
+	"homberger_800_customer_instances",
+	"homberger_1000_customer_instances",
 ]
 
 instance_routes = []
@@ -49,7 +57,9 @@ for instance, seed in itertools.product(instance_routes, random_seeds):
 		str(popsize),
 		str(ngen),
 		str(pcross),
-		str(pmut)
+		str(pmut),
+		str(pcross_greedy),
+		str(pmut_greedy)
 	]
 
 	start_time = time.time()
