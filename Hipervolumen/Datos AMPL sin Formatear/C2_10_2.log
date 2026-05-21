@@ -1,0 +1,772 @@
+
+
+:::::::::::::::::::::::::: Descripcion de la Instancia ::::::::::::::::::::::::::
+
+Nodo inicial         : 0 
+Nodo final           : 1001 
+Tmax                 : 3914 
+Numero de nodos      : 1002 
+Numero de rutas      : 6 
+Numero de categorias : 4 
+ - Cuota de la categoria 1 : 267 
+ - Cuota de la categoria 2 : 178 
+ - Cuota de la categoria 3 : 111 
+ - Cuota de la categoria 4 : 67 
+Funcion Objetivo : 1
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Funcion Objetivo : 2
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Funcion Objetivo : 3
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+==> Ejecucion : 1
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 2
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 3
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 4
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 5
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 6
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 7
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 8
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 9
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 10
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 11
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 12
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 13
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 14
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 15
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 16
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 17
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 18
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 19
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 20
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+==> Ejecucion : 21
+Gurobi 12.0.0:   lim:time = 150
+Gurobi 12.0.0: time limit, without a feasible solution
+0 simplex iterations
+Informacion Ruta : 1
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 2
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 3
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 4
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 5
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+Informacion Ruta : 6
+ - Nodos visitados   : 0 ->  [Sin ruta o ruta incompleta]
+ - Puntaje            : 0
+ - Tiempo de la ruta : 0
+
+
+
+: MVF PVF  TCPU1  f1  f2  f3    :=
+1   0   1    728   0   0   0
+2   0   1   1268   0   0   0
+3   0   1    565   0   0   0
+;
+
+:  FN1 FN2 FN3  F1  F2  F3  TCPU2    :=
+1    1   1   1   0   0   0   1290
+2    1   1   1   0   0   0   1386
+3    1   1   1   0   0   0    624
+4    1   1   1   0   0   0   1977
+5    1   1   1   0   0   0   1179
+6    1   1   1   0   0   0   1697
+7    1   1   1   0   0   0   1414
+8    1   1   1   0   0   0   1695
+9    1   1   1   0   0   0   1062
+10   1   1   1   0   0   0   1792
+11   1   1   1   0   0   0    929
+12   1   1   1   0   0   0    957
+13   1   1   1   0   0   0    847
+14   1   1   1   0   0   0   1100
+15   1   1   1   0   0   0   1843
+16   1   1   1   0   0   0   1047
+17   1   1   1   0   0   0   1443
+18   1   1   1   0   0   0   1604
+19   1   1   1   0   0   0    695
+20   1   1   1   0   0   0   1652
+21   1   1   1   0   0   0   1167
+;
+

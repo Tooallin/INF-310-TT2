@@ -57,3 +57,14 @@ ParamILS-V4/ParamILS_ANSGA2_IAll_S2.out
 ParamILS-V4/out/
 ParamILS-V4/NSGA-II-V4/Outputs/
 ParamILS-V4/NSGA-II-V4/*.log
+NSGA-II-V5/Outputs/
+NSGA-II-V5/*.log
+ParamILS-V5/Instances/
+ParamILS-V5/OUT
+ParamILS-V5/salida
+ParamILS-V5/salida2
+ParamILS-V5/quality.out
+ParamILS-V5/ParamILS_ANSGA2_IAll_S2.out
+ParamILS-V5/out/
+ParamILS-V5/NSGA-II-V5/Outputs/
+ParamILS-V5/NSGA-II-V5/*.log
