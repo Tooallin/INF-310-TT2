@@ -1,6 +1,13 @@
 # INF-310-TT2
 Generación de rutas turísticas para el problema de orientación en equipo con múltiples restricciones y ventanas de tiempo: Enfoque Multiobjetivo basado en NSGA-II
 
+## Current Best
+ * **V0:** pcross=0.75, pmut=0.6, popsize=100 -171.82231404958677, based on 242 runs with cutoff 1000000000.0 **Deprecated**
+ * **V1:** pcross=0.3, pmut=0.25, popsize=100 -526.9664179104477, based on 268 runs with cutoff 1000000000.0
+ * **V2:** pcross=1, pmut=0.9, popsize=100 -15.028836251287332, based on 971 runs with cutoff 1000000000.0
+ * **V3:** pcross=1, pcross_greedy=0.4, pmut=0.75, pmut_greedy=0.6, popsize=100 -16.256637168141594, based on 113 runs with cutoff 1000000000.0
+
+
 ## Comandos a mano
  * ``nohup bash ToDoParamILS.sh > OUT &`` desde la carpeta ``/INF-310-TT2/ParamILS`` para sintonizar NSGA-II.
  * ``./RUN_ALL_AMPL.sh`` desde la carpeta ``/INF-310-TT2/AMPL`` para ejecutar todas las instancias en AMPL.
@@ -34,3 +41,12 @@ La versión 2.0 añade dos nuevos operadores de cruzamiento y 3 nuevos operadore
 Adicionalmente, incorpora un balanceo en los operadores definiendo distintas probabilidades de aplicarlos dependiendo de si son un operador **greedy** o **random**. Las probabilidades son las siguientes:
  * **Operadores de Cruzamiento:** 40% de probabilidades de aplicar **Elitist Route Crossover**, 40% de probabilidades de aplicar **Sub-tour Exchange** y 20% de probabilidades de aplicar **Router Based Crossover**.
  * **Operadores de Mutación:** 70% de probabilidades de aplicar un operador **Greedy (Greedy Insert, Replace, Min-Team)** y un 30% de probabilidades de aplicar un operador **Random (ARS, ERS, Insert, Remove)**.
+
+## NSGA-II V3 Greedy Balanceado
+Incorpora los parametros **PCross Greedy** y **PMut Greedy**, estos definen la probabilidad de aplicar un movimiento greedy en lugar de ser probabilidades estaticas dentro del algoritmos. Todos los movimientos greedy y no greedy pasan a tener la misma probabilidad de aplicar si es que se elige dicho tipo de operador.
+
+## NSGA-II V4 RCL
+Incorpora una **Restricted Candidate List (RCL)** en los operadores heurísticos. El uso de RCL equilibra la exploración y la explotación al evitar elecciones puramente golosas (*greedy*), mitigando así la convergencia prematura. Se aplica específicamente en:
+ * **Greedy Insert Mutation:** En lugar de insertar el nodo no visitado con la mejor relación beneficio/costo de forma absoluta, el operador evalúa múltiples posiciones y guarda las 3 mejores opciones (RCL de tamaño 3) basadas en el ratio `score / tiempo añadido`. Luego, selecciona una al azar para ejecutar la inserción.
+ * **Replace Mutation:** Identifica el nodo con el peor puntaje de una ruta y busca nodos no visitados para reemplazarlo. Filtra los candidatos y almacena en la RCL los 3 nodos no visitados con los puntajes más altos, eligiendo aleatoriamente el reemplazo definitivo de esta lista.
+ * **Elitist Route Crossover (ERC):** Al momento de heredar una ruta "élite" del primer padre, evalúa todas sus rutas alternando entre dos métricas (puntaje total o puntaje promedio por nodo). Guarda las 3 mejores rutas en la RCL y escoge una al azar para pasarla intacta a la descendencia, antes de completar el resto con el material genético del segundo padre.
