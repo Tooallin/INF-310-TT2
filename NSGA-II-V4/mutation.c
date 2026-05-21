@@ -1,0 +1,385 @@
+/* Mutation routines */
+# include <stdio.h>
+# include <stdlib.h>
+# include <math.h>
+# include <string.h>
+# include "global.h"
+# include "rand.h"
+
+/* Function to perform mutation in a population */
+void mutation_pop(population *pop, problem_instance *pi) {
+	int i;
+	for (i = 0; i < popsize; i++) {
+		mutation_ind(&(pop->ind[i]), pi);
+	}
+	return;
+}
+
+/* Function to perform mutation of an individual */
+void mutation_ind(individual *ind, problem_instance *pi) {
+	int choice;
+	double prob, prob_op;
+
+	prob = randomperc();
+
+	if (prob <= pmut_bin) {
+		prob_op = randomperc();
+
+		if (prob_op <= pmut_greedy) {
+			choice = rnd(5, 7);
+		} else {
+			choice = rnd(1, 4);
+		}
+
+		if (choice == 1) ars_mutation(ind);
+		else if (choice == 2) ers_mutation(ind);
+		else if (choice == 3) insert_mutation(ind);
+		else if (choice == 4) remove_mutation(ind);
+		else if (choice == 5) greedy_insert_mutation(ind, pi);
+		else if (choice == 6) replace_mutation(ind, pi);
+		else min_team_mutation(ind, pi);
+
+		nbinmut++;
+	}
+	return;
+}
+
+/* Routine for intra route swap mutation */
+void ars_mutation(individual *ind) {
+	int start, end;
+	int poi1, poi2, temp;
+	int route;
+	
+	route = rnd(1, n_routes);
+
+	find_route_bounds(ind, route, &start, &end);
+	if (start == -1 || end == -1 || end - start < 1) return;
+
+	do {
+		poi1 = rnd(start, end);
+		poi2 = rnd(start, end);
+	} while (poi1 == poi2);
+
+	temp = ind->gene[poi1];
+	ind->gene[poi1] = ind->gene[poi2];
+	ind->gene[poi2] = temp;
+
+	return;
+}
+
+/* Routine for inter route swap mutation */
+void ers_mutation(individual *ind) {
+	int start1, end1, start2, end2;
+	int poi1, poi2, temp;
+	int route1, route2;
+	int max_attempts;
+	int attempts;
+	max_attempts = 10;
+	attempts = 0;
+
+	do {
+		route1 = rnd(1, n_routes);
+		route2 = rnd(1, n_routes);
+		attempts++;
+	} while (route1 == route2 && attempts < max_attempts);
+
+	if (route1 == route2) return;
+
+	find_route_bounds(ind, route1, &start1, &end1);
+	find_route_bounds(ind, route2, &start2, &end2);
+
+	if (start1 == -1 || end1 == -1 || end1 - start1 < 0) return;
+	if (start2 == -1 || end2 == -1 || end2 - start2 < 0) return;
+
+	poi1 = rnd(start1, end1);
+	poi2 = rnd(start2, end2);
+
+	temp = ind->gene[poi1];
+	ind->gene[poi1] = ind->gene[poi2];
+	ind->gene[poi2] = temp;
+
+	return;
+}
+
+/* Routine for insert mutation */
+void insert_mutation(individual *ind) {
+	int start_route, end_route, start_unvisited, end_unvisited;
+	int insert_pos, selected_pos, poi_to_insert;
+	int i, k;
+	int *new_gene;
+	int route;
+
+	find_last_route_bounds(ind, &start_unvisited, &end_unvisited);
+	if (start_unvisited > end_unvisited) return;
+
+	selected_pos = rnd(start_unvisited, end_unvisited);
+	poi_to_insert = ind->gene[selected_pos];
+
+	route = rnd(1, n_routes);
+	find_route_bounds(ind, route, &start_route, &end_route);
+	if (start_route == -1 || end_route == -1) return;
+
+	insert_pos = rnd(start_route, end_route + 1);
+
+	new_gene = (int *)malloc(gene_length * sizeof(int));
+	k = 0;
+
+	for (i = 0; i < gene_length; i++) {
+		if (i == insert_pos) {
+			new_gene[k++] = poi_to_insert;
+		}
+		if (i != selected_pos) {
+			new_gene[k++] = ind->gene[i];
+		}
+	}
+
+	while (k < gene_length) {
+		new_gene[k++] = -1;
+	}
+
+	memcpy(ind->gene, new_gene, gene_length * sizeof(int));
+	free(new_gene);
+}
+
+/* Routine for remove mutation */
+void remove_mutation(individual *ind) {
+	int start, end, start_unvisited, end_unvisited;
+	int route = rnd(1, n_routes);
+	int poi_to_remove, remove_index;
+	int i, k;
+	int *new_gene;
+
+	find_route_bounds(ind, route, &start, &end);
+	if (start == -1 || end == -1 || end - start < 0) return;
+
+	remove_index = rnd(start, end);
+	poi_to_remove = ind->gene[remove_index];
+
+	find_last_route_bounds(ind, &start_unvisited, &end_unvisited);
+	if (start_unvisited == -1 || end_unvisited == -1) return;
+
+	new_gene = (int *)malloc(gene_length * sizeof(int));
+	k = 0;
+
+	for (i = 0; i < gene_length; i++) {
+		if (i != remove_index) {
+			new_gene[k++] = ind->gene[i];
+		}
+	}
+
+	new_gene[k++] = poi_to_remove;
+
+	while (k < gene_length) {
+		new_gene[k++] = -1;
+	}
+
+	memcpy(ind->gene, new_gene, gene_length * sizeof(int));
+	free(new_gene);
+}
+
+/* Routine for greedy insert mutation with RCL */
+void greedy_insert_mutation(individual *ind, problem_instance *pi) {
+	int start_r, end_r, start_unv, end_unv;
+	int route = rnd(1, n_routes);
+
+	find_last_route_bounds(ind, &start_unv, &end_unv);
+	if (start_unv > end_unv || start_unv == -1) return;
+
+	find_route_bounds(ind, route, &start_r, &end_r);
+	if (start_r == -1) return;
+
+	int rcl_size = 3;
+	int rcl_u_idx[3] = {-1, -1, -1};
+	int rcl_pos[3] = {-1, -1, -1};
+	double rcl_ratio[3] = {-1.0, -1.0, -1.0};
+	int rcl_count = 0;
+
+	int attempt, pos;
+
+	for (attempt = 0; attempt < 10; attempt++) {
+		int u_idx = rnd(start_unv, end_unv);
+		int u = ind->gene[u_idx];
+		double score = pi->set_POI[u-1].SCORE;
+		
+		for (pos = start_r; pos <= end_r + 1; pos++) {
+			int prev = (pos == start_r) ? pi->param_o.id : ind->gene[pos-1];
+			int next = (pos == end_r + 1) ? pi->param_s.id : ind->gene[pos];
+			
+			double time_added = pi->param_t[prev][u] + pi->set_POI[u-1].TT + pi->param_t[u][next] - pi->param_t[prev][next];
+			if (time_added <= 0.0) time_added = 0.001;
+			
+			double ratio = score / time_added;
+
+			if (rcl_count < rcl_size) {
+				rcl_u_idx[rcl_count] = u_idx;
+				rcl_pos[rcl_count] = pos;
+				rcl_ratio[rcl_count] = ratio;
+				rcl_count++;
+			} else {
+				int worst_rcl_idx = -1;
+				double min_in_rcl = 999999.0;
+				for (int i = 0; i < rcl_size; i++) {
+					if (rcl_ratio[i] < min_in_rcl) {
+						min_in_rcl = rcl_ratio[i];
+						worst_rcl_idx = i;
+					}
+				}
+
+				if (ratio > min_in_rcl) {
+					rcl_u_idx[worst_rcl_idx] = u_idx;
+					rcl_pos[worst_rcl_idx] = pos;
+					rcl_ratio[worst_rcl_idx] = ratio;
+				}
+			}
+		}
+	}
+
+	if (rcl_count > 0) {
+		int selected = rnd(0, rcl_count - 1);
+		int best_u_idx = rcl_u_idx[selected];
+		int best_pos = rcl_pos[selected];
+
+		int u = ind->gene[best_u_idx];
+		int *new_gene = (int *)malloc(gene_length * sizeof(int));
+		int k = 0, i;
+
+		for (i = 0; i < gene_length; i++) {
+			if (i == best_pos) new_gene[k++] = u;
+			if (i != best_u_idx) new_gene[k++] = ind->gene[i];
+		}
+		while (k < gene_length) new_gene[k++] = -1;
+		memcpy(ind->gene, new_gene, gene_length * sizeof(int));
+		free(new_gene);
+	}
+}
+
+/* Routine for replace/exchange mutation with RCL */
+void replace_mutation(individual *ind, problem_instance *pi) {
+	int start_r, end_r, start_unv, end_unv, i;
+	int route = rnd(1, n_routes);
+
+	find_route_bounds(ind, route, &start_r, &end_r);
+	if (start_r == -1 || end_r == -1 || end_r < start_r) return;
+
+	int min_score = 999999;
+	int worst_idx = -1;
+	for (i = start_r; i <= end_r; i++) {
+		int u = ind->gene[i];
+		if (pi->set_POI[u-1].SCORE < min_score) {
+			min_score = pi->set_POI[u-1].SCORE;
+			worst_idx = i;
+		}
+	}
+	if (worst_idx == -1) return;
+
+	find_last_route_bounds(ind, &start_unv, &end_unv);
+	if (start_unv == -1 || start_unv > end_unv) return;
+
+	int rcl_size = 3;
+	int rcl_u_idx[3] = {-1, -1, -1};
+	int rcl_score[3] = {-1, -1, -1};
+	int rcl_count = 0;
+
+	for (int attempt = 0; attempt < 15; attempt++) {
+		int u_idx = rnd(start_unv, end_unv);
+		int u = ind->gene[u_idx];
+		int score = pi->set_POI[u-1].SCORE;
+
+		if (score > min_score) {
+			if (rcl_count < rcl_size) {
+				rcl_u_idx[rcl_count] = u_idx;
+				rcl_score[rcl_count] = score;
+				rcl_count++;
+			} else {
+				int min_in_rcl = 999999;
+				int worst_rcl_idx = -1;
+				for (int j = 0; j < rcl_size; j++) {
+					if (rcl_score[j] < min_in_rcl) {
+						min_in_rcl = rcl_score[j];
+						worst_rcl_idx = j;
+					}
+				}
+				if (score > min_in_rcl) {
+					rcl_u_idx[worst_rcl_idx] = u_idx;
+					rcl_score[worst_rcl_idx] = score;
+				}
+			}
+		}
+	}
+
+	if (rcl_count > 0) {
+		int selected = rnd(0, rcl_count - 1);
+		int best_unv_idx = rcl_u_idx[selected];
+
+		int temp = ind->gene[worst_idx];
+		ind->gene[worst_idx] = ind->gene[best_unv_idx];
+		ind->gene[best_unv_idx] = temp;
+	}
+}
+
+/* Routine for min-team (worst route focus) mutation */
+void min_team_mutation(individual *ind, problem_instance *pi) {
+	int min_route_score = 9999999;
+	int worst_route = -1, r, i;
+
+	for (r = 1; r <= n_routes; r++) {
+		int start_r, end_r;
+		find_route_bounds(ind, r, &start_r, &end_r);
+		int score = 0;
+		if (start_r != -1 && end_r != -1) {
+			for (i = start_r; i <= end_r; i++) {
+				score += pi->set_POI[ind->gene[i]-1].SCORE;
+			}
+		}
+		if (score < min_route_score) {
+			min_route_score = score;
+			worst_route = r;
+		}
+	}
+
+	if (worst_route == -1) return;
+
+	int start_unv, end_unv, start_r, end_r;
+	find_last_route_bounds(ind, &start_unv, &end_unv);
+	if (start_unv > end_unv || start_unv == -1) return;
+	
+	find_route_bounds(ind, worst_route, &start_r, &end_r);
+	if (start_r == -1) return;
+
+	int best_u_idx = -1;
+	int max_score = -1;
+	for (int attempt = 0; attempt < 10; attempt++) {
+		int u_idx = rnd(start_unv, end_unv);
+		int u = ind->gene[u_idx];
+		if (pi->set_POI[u-1].SCORE > max_score) {
+			max_score = pi->set_POI[u-1].SCORE;
+			best_u_idx = u_idx;
+		}
+	}
+	if (best_u_idx == -1) return;
+	int u = ind->gene[best_u_idx];
+
+	int best_pos_found = start_r;
+	double best_cost = 999999.0;
+	
+	for (int pos = start_r; pos <= end_r + 1; pos++) {
+		int prev = (pos == start_r) ? pi->param_o.id : ind->gene[pos-1];
+		int next = (pos == end_r + 1) ? pi->param_s.id : ind->gene[pos];
+		
+		double time_added = pi->param_t[prev][u] + pi->set_POI[u-1].TT + pi->param_t[u][next] - pi->param_t[prev][next];
+		if (time_added < best_cost) {
+			best_cost = time_added;
+			best_pos_found = pos;
+		}
+	}
+
+	int *new_gene = (int *)malloc(gene_length * sizeof(int));
+	int k = 0;
+	for (i = 0; i < gene_length; i++) {
+		if (i == best_pos_found) new_gene[k++] = u;
+		if (i != best_u_idx) new_gene[k++] = ind->gene[i];
+	}
+	while (k < gene_length) new_gene[k++] = -1;
+	memcpy(ind->gene, new_gene, gene_length * sizeof(int));
+	free(new_gene);
+}
