@@ -154,9 +154,10 @@ void subtour_crossover(individual *parent1, individual *parent2, individual *chi
 		gene[i++] = -1; 
 	}
 
-	for (j = 0; j < gene_length - n_routes; j++) { 
-		if (!used[j] && i < gene_length) {
-			gene[i++] = j + 1;
+	for (j = 0; j < gene_length; j++) {
+		if (i == gene_length) break;
+		if (!used[j]) {
+			gene[i++] = j+1;
 		}
 	}
 
@@ -238,8 +239,9 @@ void erc_crossover(individual *parent1, individual *parent2, individual *child, 
 		gene[i++] = -1;
 	}
 
-	for (j = 0; j < gene_length - n_routes; j++) {
-		if (!used[j] && i < gene_length) {
+	for (j = 0; j < gene_length; j++) {
+		if (i == gene_length) break;
+		if (!used[j]) {
 			gene[i++] = j+1;
 		}
 	}
