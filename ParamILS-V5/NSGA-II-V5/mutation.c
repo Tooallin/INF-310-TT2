@@ -252,7 +252,6 @@ void greedy_insert_mutation(individual *ind, problem_instance *pi) {
 			if (i == best_pos) new_gene[k++] = u;
 			if (i != best_u_idx) new_gene[k++] = ind->gene[i];
 		}
-		while (k < gene_length) new_gene[k++] = -1;
 		memcpy(ind->gene, new_gene, gene_length * sizeof(int));
 		free(new_gene);
 	}
@@ -384,7 +383,6 @@ void min_team_mutation(individual *ind, problem_instance *pi) {
 		if (i == best_pos_found) new_gene[k++] = u;
 		if (i != best_u_idx) new_gene[k++] = ind->gene[i];
 	}
-	while (k < gene_length) new_gene[k++] = -1;
 	memcpy(ind->gene, new_gene, gene_length * sizeof(int));
 	free(new_gene);
 }
@@ -414,21 +412,11 @@ void route_ruin_mutation(individual *ind) {
 	k = 0;
 	for (i = 0; i < gene_length; i++) {
 		if (i >= ruin_start && i < ruin_start + ruin_len) continue;
-		if (ind->gene[i] != -1) {
-			new_gene[k++] = ind->gene[i];
-		} else {
-			if (k < gene_length - 1 && ind->gene[i] == -1) {
-				new_gene[k++] = -1;
-			}
-		}
+		new_gene[k++] = ind->gene[i];
 	}
 
 	for (i = 0; i < ruin_len; i++) {
 		new_gene[k++] = ruined_nodes[i];
-	}
-
-	while (k < gene_length) {
-		new_gene[k++] = -1;
 	}
 
 	memcpy(ind->gene, new_gene, gene_length * sizeof(int));
